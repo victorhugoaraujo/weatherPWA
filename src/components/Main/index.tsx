@@ -1,20 +1,28 @@
 import * as S from './styles';
 
-const Main = ({
-  title = 'React Avançado',
-  description = 'TypeScript, ReactJS e Styled Components',
-}) => (
+import Button from '../Button';
+import { CurrentLocation } from '@styled-icons/boxicons-regular';
+
+const Main = () => (
   <S.Wrapper>
-    <S.Logo
-      src="/img/logo.svg"
-      alt="Imagem de um átomo e React Avançado escrito ao lado"
-    />
-    <S.Title>{title}</S.Title>
-    <S.Description>{description}</S.Description>
-    <S.Illustration
-      src="/img/hero-illustration.svg"
-      alt="Um desenvoldedor de frente para uma tela com código."
-    />
+    <S.MainInfo>
+      <Button>Search for places</Button>
+      <Button icon={<CurrentLocation />} />
+    </S.MainInfo>
+    <S.WeatherInfo>
+      <S.WeatherIcon
+        src="/img/shower.png"
+        alt="Imagem de um átomo e React Avançado escrito ao lado"
+      />
+      <S.Temperature>
+        15<span>ºC</span>
+      </S.Temperature>
+      <S.WeatherStatus>Shower</S.WeatherStatus>
+      <S.VStack>
+        <S.WeatherLocation>Today . Fri, 5 Jun</S.WeatherLocation>
+        <S.WeatherLocation>Helsinki</S.WeatherLocation>
+      </S.VStack>
+    </S.WeatherInfo>
   </S.Wrapper>
 );
 
